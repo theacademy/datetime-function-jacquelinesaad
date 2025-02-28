@@ -22,9 +22,8 @@ public class DateTimeFunctions {
 	 */
 	public static LocalDate getTodaysDate() {
 		//YOUR CODE STARTS HERE
-		return null;
+		return LocalDate.now();
 		//YOUR CODE ENDS HERE
-
 	}
 
 	/*
@@ -33,7 +32,7 @@ public class DateTimeFunctions {
 	 */
 	public static LocalDate getLaterDatebyDays(LocalDate date, int x) {
 		//YOUR CODE STARTS HERE
-		return null;
+		return date.plusDays(x);
 		//YOUR CODE ENDS HERE
 
 	}
@@ -44,7 +43,7 @@ public class DateTimeFunctions {
 	 */
 	public static LocalDate getPreviousDatebyWeeks(LocalDate date, int x) {
 		//YOUR CODE STARTS HERE
-		return null;
+		return date.minusWeeks(x);
 		//YOUR CODE ENDS HERE
 
 	}
@@ -52,11 +51,14 @@ public class DateTimeFunctions {
 	/*
 	 * Implement the method so that it returns the time difference between two input dates
 	 * in terms of years, months, and days.
-	 * Return the String in the format: "Year-20:Months-5:Days-1"
+	 * Return the String in the format: "Years-20:Months-5:Days-1"
 	 */
 	public static String getTimeDifference(LocalDate date1, LocalDate date2) {
 		//YOUR CODE STARTS HERE
-		return null;
+		Period difference = Period.between(date1, date2);
+		return "Years-" + difference.getYears() +
+				":Months-" + difference.getMonths() +
+				":Days-" + difference.getDays();
 		//YOUR CODE ENDS HERE
 
 	}
